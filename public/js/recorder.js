@@ -105,7 +105,8 @@ downloadButton.onclick = e => {
   let zip = new JSZip();
   if (recordings.length != 0) {
     for (let recording in recordings){
-      zip.file('file'+iter+'.wav', recording.data);
+      let file = new File([recording.data], 'title', { type: 'audio/wav' });
+      zip.file('file'+iter+'.wav', file);
       iter += 1;
       console.log(iter);
     }
