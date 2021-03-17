@@ -1,0 +1,12 @@
+{
+    "name": "web_recorder",
+    "version": "1.0.0",
+    "description": "Web recorder for recording commands for nerual network dataset.",
+    "repository": "https://github.com/polotent/web_recorder",
+    "dependencies": {
+        "express": "4.17.1"
+    },
+    "scripts": {
+        "start": "node app.js"
+    }
+}

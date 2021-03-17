@@ -1,0 +1,111 @@
+/* General*/
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Sections */
+#header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    background-color: #1c3440;
+}
+
+#studio-section {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #e8e8e8;
+    margin-top: 10px;
+}
+
+#record-button-section {
+    text-align: center;
+    padding: 0;
+}
+
+#record-input-section {
+    text-align: left;
+    padding: 0;
+}
+
+#download-section {
+    text-align: right;
+    padding: 0;
+}
+
+#command-dict-section, #recordings-section {
+    padding: 10px;
+    text-align: center;
+}
+
+/* Wrappers*/
+#command-dict-label-wrapper, #recordings-label-wrapper {
+    padding : 5px;
+    background-color: #1c3440;
+    color: white;
+}
+
+.table-wrapper {
+    padding: 0px;
+}
+
+/* Labels */
+#header-label {
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    margin: 0px;
+}
+
+#command-label {
+    font-size: 20px;
+}
+
+#command-dict-label, #recordings-label {
+    margin: 0px;
+}
+
+/* Buttons */
+#record-button {
+    width: 70px;
+    height: 70px;
+}
+
+.delete-button {
+    width: 40px;
+    height: 40px;
+}
+
+#record-studio {
+    padding : 10px;
+}
+
+#download-button {
+    font-size: 16px;
+    background-color: #f0ad4e;
+    padding : 5px;
+    border : 1px solid black;
+
+}
+
+/* Inputs */
+#command-input {
+    padding: 10px;
+    height: 40px;
+}
+
+/* Tables */
+table {
+    width : 100%;
+    background-color: white;
+}
+
+th, tr, td {
+    border: 1px solid black;
+}
+
+/* Audio */
+audio {
+    width: 100%;
+}

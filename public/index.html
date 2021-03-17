@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Web Recorder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- icon -->
+    <link rel="icon" href="/img/icon.png">
+    <!-- css -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- js -->
+    <script src="/js/jquery-3.6.0.js"></script>
+    <script src="/js/bootstrap.js"></script>
+  </head>
+  <body> 
+    <section id="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1 id="header-label">Web Recorder</h1>
+          </div>          
+        </div>   
+      </div>     
+    </section>
+    <section id="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div id="studio-section" class="row">
+              <div class="col-12">
+                <div id="record-section" class="row">
+                  <div id="record-input-section align-self-center" class="col-4">
+                    <label id="command-label">Enter command name:</label>
+                    <input id="command-input" type="text" placeholder="command">                  
+                  </div>
+                  <div id="record-button-section" class="col-4">
+                    <img id="record-button" src="/img/record.png"/>
+                  </div>
+                  
+                  <div id="download-section" class="col-4">
+                    <button id="download-button">Download as zip</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div id="command-dict-section" class="col-6">
+            <div class="row">
+              <div id="command-dict-label-wrapper" class="col-12">
+                <h4 id="command-dict-label">Command Dictionary</h4>
+              </div>
+              <div class="col-12 table-wrapper">
+                <table cellspacing="2" cellpadding="4" id="command-dict-table">
+                  <thead>
+                    <tr>
+                      <th>Command name</th>
+                      <th>Number of recordings</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>              
+                </table>
+              </div>
+            </div>            
+          </div>
+          <div id="recordings-section" class="col-6">
+            <div id="recordings-label-wrapper" class="col-12">
+              <h4 id="recordings-label">Recordings</h4>
+            </div>
+            <div class="col-12 table-wrapper">
+              <table cellspacing="2" cellpadding="4" id="recordings-table">
+                <thead>
+                  <tr>
+                    <th width="5%">id</th>
+                    <th width="20%">Command name</th>
+                    <th width="65%">Recording</th>
+                    <th width="10%">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>              
+              </table>
+            </div>       
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="footer">
+    </section>
+    <!-- js -->
+    <script src="/js/jszip.js"></script>  
+    <script src="/js/FileSaver.js"></script> 
+    <script src="/js/recorder.js"></script>    
+  </body>
+</html> 
