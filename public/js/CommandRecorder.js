@@ -93,13 +93,36 @@ button.onclick = e => {
     }    
 }
 
+function unifyNum(num, maxIndexLen) {
+  let str = num.toString();
+  if (str.length < maxIndexLen){
+    res = "0".repeat(maxIndexLen - str.length);
+  } else {
+    res = num.toString();
+  }
+  return res;
+}
+
 let downloadButton = document.getElementById("download-button");
 downloadButton.onclick = e => {
   let iter = 0;
+  let num;
   let zip = new JSZip();
+  let fileIndexIters = {};
+  let quantities = [];
+  for (let command of Object.values(commands)){quantities.push(command.quantity)}
+  const maxIndexLen = Math.max(...quantities).toString().length;
+  let baseName = "-" + audioContext.sampleRate + "-16bit-float-1channel.wav";
   if (Object.keys(recordings).length) {
     for (let recording of Object.values(recordings)){
-      zip.file('file'+iter+'.wav', recording.data);
+      if (recording.command in fileIndexIters){
+        fileIndexIters[recording.command] += 1;
+        num = unifyNum(fileIndexIters[recording.command], maxIndexLen);
+      } else {
+        fileIndexIters[recording.command] = 0;
+        num = unifyNum(fileIndexIters[recording.command], maxIndexLen);
+      }
+      zip.file(recording.command + "/" + num + "-" + recording.command + baseName, recording.data);
       iter += 1;
     }
     zip.generateAsync({type:"blob"})
