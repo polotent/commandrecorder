@@ -1,12 +1,4 @@
 let gumStream;
-
-navigator.mediaDevices.getUserMedia({audio: true, video:false}).then(stream => {
-  audioContext = new AudioContext();
-  gumStream = stream;
-  input = audioContext.createMediaStreamSource(stream);
-  recorder = new Recorder(input,{numChannels:1});
-});
-
 let button = document.getElementById('record-button');
 let recordingBuff;
 let commands = {};
@@ -50,8 +42,6 @@ function addRecord(blob){
   recordings[idIter]["audio"].controls=true;
   recordings[idIter]["audio"].autoplay=false;
   
-  recorder.clear();
-
   idIter += 1;
 }
 
@@ -81,7 +71,14 @@ button.onclick = e => {
         state = 'recording';
         button.setAttribute('src', '/img/stop.png');
         recordingBuff = [];
-        recorder.record();
+
+        navigator.mediaDevices.getUserMedia({audio: true, video:false}).then(stream => {
+          audioContext = new AudioContext();
+          gumStream = stream;
+          input = audioContext.createMediaStreamSource(stream);
+          recorder = new Recorder(input,{numChannels:1});
+          recorder.record();
+        });        
       }
     } else {
       state = 'idle';
