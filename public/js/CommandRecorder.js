@@ -50,6 +50,8 @@ function addRecord(blob){
   recordings[idIter]["audio"].controls=true;
   recordings[idIter]["audio"].autoplay=false;
   
+  recorder.clear();
+
   idIter += 1;
 }
 
@@ -88,8 +90,7 @@ button.onclick = e => {
 
       recorder.stop();
       gumStream.getAudioTracks()[0].stop();
-      recorder.exportWAV(addRecord);
-      recorder.clear();
+      recorder.exportWAV(addRecord)
     }    
 }
 
