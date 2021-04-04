@@ -95,6 +95,7 @@ function unifyNum(num, maxIndexLen) {
   let str = num.toString();
   if (str.length < maxIndexLen){
     res = "0".repeat(maxIndexLen - str.length);
+    res += num.toString();
   } else {
     res = num.toString();
   }
